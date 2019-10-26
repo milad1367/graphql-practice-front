@@ -15,7 +15,7 @@ function Home() {
                 <Route exact path="/">
                     <Posts />
                 </Route>
-                <Route path="/comments/:id">
+                <Route path="/posts/:id/comments">
                     <Comments />
                 </Route>
             </Switch>

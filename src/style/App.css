@@ -1,0 +1,12 @@
+.App {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+.Comment {
+  margin-top:2em
+}
+.Comments {
+  margin-top: 3em;
+  background-color: white;
+  padding: 2em;
+}
