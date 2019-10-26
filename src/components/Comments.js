@@ -32,8 +32,9 @@ function Comments() {
       
       const comments = data.post.comments || [];
       return (
-        <div>
+        <div className="Comments">
             <Link to={'/'}>back to home</Link>
+            <h2 style={{marginTop:'2em'}}>Comments</h2>
             {comments.map(comment => <Comment key={comment.id} comment={comment} />)}
         </div>
       );

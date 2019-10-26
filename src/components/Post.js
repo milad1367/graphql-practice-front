@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Card from 'react-bootstrap/Card';
 
 import {
     BrowserRouter as Router,
@@ -11,12 +12,18 @@ import {
 function Post({post}) {
     const _post = post
     return(
-      <div>
-        <img  src={_post.image} />
-        <p>username: {_post.name}</p>
-        <p>caption: {_post.content}</p>
-        <span>{_post.comments.length} comments</span> <Link to={`/comments/${_post.id}`}>click to show</Link>
-      </div>
+        <Card style={{ width: '45rem' }}>
+            <Card.Img  alt="Responsive image" style={{height:'500px'}}  variant="top" src={_post.image} />
+            <Card.Body>
+                <Card.Title>{_post.name}</Card.Title>
+                <Card.Text>
+                    {_post.content}
+                </Card.Text>
+                <Card.Text className="d-inline">{_post.comments.length} comments </Card.Text>
+                <Link to={`/posts/${_post.id}/comments`}>[click to show]</Link>
+            </Card.Body>
+        </Card>
+       
     )
 }
 export default Post
