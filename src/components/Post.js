@@ -19,8 +19,12 @@ function Post({post}) {
                 <Card.Text>
                     {_post.content}
                 </Card.Text>
-                <Card.Text className="d-inline">{_post.comments.length} comments </Card.Text>
-                <Link to={`/posts/${_post.id}/comments`}>[click to show]</Link>
+                {_post.comments.length > 0 ? 
+                <div>
+                    <Card.Text className="d-inline">{_post.comments.length} comments </Card.Text>
+                    <Link to={`/posts/${_post.id}/comments`}>[click to show]</Link>
+                </div>
+                : <Card.Text>No comment yet!</Card.Text> }
             </Card.Body>
         </Card>
        
