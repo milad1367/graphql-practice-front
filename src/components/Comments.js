@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import Comment from './Comment';
+import Col from 'react-bootstrap/Col';
 
 import {
     BrowserRouter as Router,
@@ -32,11 +33,11 @@ function Comments() {
       
       const comments = data.post.comments || [];
       return (
-        <div className="Comments">
+        <Col md={6} className="Comments">
             <Link to={'/'}>back to home</Link>
             <h2 style={{marginTop:'2em'}}>Comments</h2>
             {comments.map(comment => <Comment key={comment.id} comment={comment} />)}
-        </div>
+        </Col>
       );
 }
 export default Comments

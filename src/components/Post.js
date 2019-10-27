@@ -12,8 +12,8 @@ import {
 function Post({post}) {
     const _post = post
     return(
-        <Card style={{ width: '45rem' }}>
-            <Card.Img  alt="Responsive image" style={{height:'500px'}}  variant="top" src={_post.image} />
+        <Card>
+            <Card.Img style={{maxHeight:'500px'}}  variant="top" src={_post.image} />
             <Card.Body>
                 <Card.Title>{_post.name}</Card.Title>
                 <Card.Text>

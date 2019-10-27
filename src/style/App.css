@@ -5,8 +5,32 @@
 .Comment {
   margin-top:2em
 }
+.Header {
+  
+  background-color: white;
+  min-height: 10vh;
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(var(--b6a,219,219,219),1);
+
+}
+
+@media (min-width: 768px) { 
+  .Header .col-md-7 {
+    max-width: 53.333333%;
+
+  } 
+}
+
+.HeaderBody {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+
+
 .Comments {
-  margin-top: 3em;
+  margin-top: 1em;
   background-color: white;
   padding: 2em;
 }
+
