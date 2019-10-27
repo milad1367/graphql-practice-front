@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Spinner from 'react-bootstrap/Spinner';
+import Img from 'react-image'
 
 import {
     BrowserRouter as Router,
@@ -13,7 +15,16 @@ function Post({post}) {
     const _post = post
     return(
         <Card>
-            <Card.Img style={{maxHeight:'500px'}}  variant="top" src={_post.image} />
+            <Img
+            style={{maxHeight:'500px'}}
+             src={_post.image}           
+             loader={
+               <div className="text-center">
+                 <Spinner animation="grow" variant="danger" />
+              </div>
+              }
+            />
+            {/*<img style={{maxHeight:'500px'}}  variant="top" src={_post.image} />*/}
             <Card.Body>
                 <Card.Title>{_post.name}</Card.Title>
                 <Card.Text>
