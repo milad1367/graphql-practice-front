@@ -35,8 +35,7 @@ function Comments() {
         if (error) return `Error! ${error}`;
         const comments = data.post.comments || [];
         return (
-            <Col md={6} className="Comments">
-                <h2>Comments</h2>
+            <Col md={6}>
                 {comments.map(comment => <Comment key={comment.id} comment={comment} />)}
             </Col>
         );
