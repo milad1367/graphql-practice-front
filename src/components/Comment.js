@@ -2,14 +2,14 @@ import React from 'react';
 import Media from 'react-bootstrap/Media';
 function Comment({comment}) {
    const _comment = comment;   
-   return (
+    return (
        <div className="Comment">
             <Media>
                 <img
-                    width={64}
-                    height={64}
-                    className="mr-3"
-                    src="https://source.unsplash.com/random/500*500/?fruit/64x64"
+                    width={32}
+                    height={32}
+                    className="mr-3 rounded-circle"
+                    src={_comment.avatar}
                     alt="Generic placeholder"
                 />
                 <Media.Body>
@@ -20,7 +20,7 @@ function Comment({comment}) {
                 </Media.Body>
             </Media>
        </div>
-   )
+    )
 
 }
 export default Comment

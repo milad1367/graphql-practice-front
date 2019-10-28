@@ -6,6 +6,7 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { HttpLink } from 'apollo-link-http';
 import gql from "graphql-tag";
+import { BrowserRouter } from 'react-router-dom'
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -18,6 +19,9 @@ const client = new ApolloClient({
 });
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-   <ApolloProvider client={client}>
+  <BrowserRouter>
+    <ApolloProvider client={client}>
        <App />
-   </ApolloProvider>,rootElement);
+    </ApolloProvider>
+  </BrowserRouter>
+,rootElement);

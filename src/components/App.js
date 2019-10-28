@@ -1,20 +1,23 @@
 import React from 'react';
-import Home from './Home';
+import { Switch, Route } from 'react-router-dom';
 import '../style/App.css';
-import logo from '../img/logo.png';
-import Col from 'react-bootstrap/Col';
-import {Container,Row} from 'react-bootstrap'
+import Comments from './Comments';
+import Posts from './Posts';
+import Header from './Header';
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-          <div className="Header d-flex justify-content-center">
-            <Col md={7} sm={12}  className="HeaderBody">
-              <img style={{ width: '150px', height: 'auto' }} src= {logo}></img>
-            </Col>
-          </div>
+           <Header />
           <div className="d-flex justify-content-center">
-            <Home />
+            <Switch>
+              <Route exact path="/">
+                  <Posts />
+              </Route>
+              <Route path="/posts/:id/comments">
+                  <Comments />
+              </Route>
+            </Switch>
           </div>
       </div>
     );

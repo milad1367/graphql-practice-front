@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
 import Img from 'react-image'
-
+import Image from 'react-bootstrap/Image'
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,21 +10,30 @@ import {
     Link,
     useParams
   } from "react-router-dom";
-
 function Post({post}) {
     const _post = post
     return(
         <Card>
+            <Card.Body>
+                <Image 
+                    width={32}
+                    height={32}
+                    className="mr-1 rounded-circle"
+                    src={_post.avatar}
+                    />
+                <span>
+                    {_post.name}
+                </span>
+            </Card.Body>
             <Img
-            style={{maxHeight:'500px'}}
-             src={_post.image}           
-             loader={
-               <div className="text-center">
-                 <Spinner animation="grow" variant="danger" />
-              </div>
-              }
+                style={{maxHeight:'500px'}}
+                src={_post.image}           
+                loader={
+                <div className="text-center">
+                    <Spinner animation="grow" variant="danger" />
+                </div>
+                }
             />
-            {/*<img style={{maxHeight:'500px'}}  variant="top" src={_post.image} />*/}
             <Card.Body>
                 <Card.Title>{_post.name}</Card.Title>
                 <Card.Text>
