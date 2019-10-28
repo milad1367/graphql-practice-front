@@ -1,7 +1,7 @@
 # graphql-practice-front
 
 
-## Running the app
+### Running the app
 
 ```bash
 $ yarn install
